@@ -1,0 +1,70 @@
+{
+  "info": {
+    "name": "API Jogadores",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar jogadores",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": "http://127.0.0.1:8000/api/jogadores"
+      }
+    },
+    {
+      "name": "Ver um jogador",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": "http://127.0.0.1:8000/api/jogadores/1"
+      }
+    },
+    {
+      "name": "Cadastrar jogador",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"nome\": \"Arrascaeta\",\n    \"time\": \"Flamengo\",\n    \"posicao\": \"Meia\",\n    \"numero_camisa\": 14\n}"
+        },
+        "url": "http://127.0.0.1:8000/api/jogadores"
+      }
+    },
+    {
+      "name": "Editar jogador",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"numero_camisa\": 10\n}"
+        },
+        "url": "http://127.0.0.1:8000/api/jogadores/4"
+      }
+    },
+    {
+      "name": "Apagar jogador",
+      "request": {
+        "method": "DELETE",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": "http://127.0.0.1:8000/api/jogadores/4"
+      }
+    },
+    {
+      "name": "Jogador inexistente (404)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": "http://127.0.0.1:8000/api/jogadores/99"
+      }
+    }
+  ]
+}
